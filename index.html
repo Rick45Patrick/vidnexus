@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="dsXfYadzPSwWWceIzv9pihpmKlWqRq55pUHl9hk-SdI" />
+    <title>VidNexus</title>
+    <link rel="icon" type="image/webp" href="vid.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="vidnexus.css">
+    <script>
+        // Prevent viewing source code
+        document.addEventListener("keydown", function (event) {
+            if (event.ctrlKey && (event.key === "u" || event.key === "U" || event.key === "s" || event.key === "S")) {
+                event.preventDefault();
+                alert("Viewing source is disabled!");
+            }
+            if (event.ctrlKey && event.shiftKey && (event.key === "i" || event.key === "I")) {
+                event.preventDefault();
+                alert("Developer tools are disabled!");
+            }
+            if (event.key === "F12") {
+                event.preventDefault();
+                alert("Developer tools are disabled!");
+            }
+        });
+
+        // Disable Right-Click
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+            alert("Right-click is disabled!");
+        });
+    </script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="yooo.html"><i class="fa fa-home"></i> Home</a>
+        <a href="shorts.html"><i class="fa fa-video"></i> Shorts</a>
+        <a href="football.html"><i class="fa fa-futbol"></i> Football</a>
+        <a href="cars.html"><i class="fa fa-car"></i> Cars</a>
+        <a href="music.html"><i class="fa fa-music"></i> Music</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>VidNexus - Video Streaming</h2>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search videos...">
+            <button onclick="searchVideos()"><i class="fa fa-search"></i></button>
+        </div>
+
+        <!-- Video Section -->
+        <div class="content" id="video-container">
+            <div class="video-container" data-title="Football Highlights">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/vxBLCV1YefA" allowfullscreen></iframe>
+                <div class="video-title">Football Highlights</div>
+            </div>
+            <div class="video-container" data-title="Epic Goals">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/X0KD6gXlFjY" allowfullscreen></iframe>
+                <div class="video-title">Epic Goals</div>
+            </div>
+            <div class="video-container" data-title="Cool Match Moments">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/Rcc9veq0JgM" allowfullscreen></iframe>
+                <div class="video-title">Cool Match Moments</div>
+            </div>
+            <div class="video-container" data-title="ALL PARENTS NEED TO WATCH THIS NOW">
+                <iframe class="video-frame" src="https://www.youtube.com/embed/F1gzOg-BiXk" allowfullscreen></iframe>
+                <div class="video-title">Parents to watch this</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="yooo.html"><i class="fa fa-home"></i> Home</a>
+        <a href="shorts.html"><i class="fa fa-video"></i> Shorts</a>
+        <a href="football.html"><i class="fa fa-futbol"></i> Football</a>
+        <a href="cars.html"><i class="fa fa-car"></i> Cars</a>
+        <a href="music.html"><i class="fa fa-music"></i> Music</a>
+    </div>
+
+    <script>
+        function searchVideos() {
+            let input = document.getElementById("search-bar").value.toLowerCase();
+            let videos = document.querySelectorAll(".video-container");
+            
+            videos.forEach(video => {
+                let title = video.getAttribute("data-title").toLowerCase();
+                if (title.includes(input)) {
+                    video.style.display = "block";
+                } else {
+                    video.style.display = "none";
+                }
+            });
+        }
+
+        // Improved Firewall Protection (Logs instead of Blocking)
+        function detectBot() {
+            let botPatterns = ["bot", "crawler", "spider", "scraper"];
+            let userAgent = navigator.userAgent.toLowerCase();
+            let isHeadless = navigator.webdriver;
+
+            if (botPatterns.some(bot => userAgent.includes(bot)) || isHeadless) {
+                console.warn("Possible bot detected");
+            }
+        }
+        detectBot();
+
+        // Shuffle Videos on Refresh
+        function shuffleVideos() {
+            let container = document.getElementById("video-container");
+            let videos = Array.from(container.children);
+            videos.sort(() => Math.random() - 0.5);
+            container.innerHTML = "";
+            videos.forEach(video => container.appendChild(video));
+        }
+        shuffleVideos();
+    </script>
+</body>
+</html>
