@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - VidNexus</title>
+    <link rel="icon" type="image/webp" href="vid.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="vidnexus.css">
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+        <a href="yooo.html"><i class="fa fa-home"></i> Home</a>
+        <a href="shorts.html"><i class="fa fa-video"></i> Shorts</a>
+        <a href="football.html"><i class="fa fa-futbol"></i> Football</a>
+        <a href="cars.html"><i class="fa fa-car"></i> Cars</a>
+        <a href="music.html"><i class="fa fa-music"></i> Music</a>
+        <a href="contacts.html" class="active"><i class="fa fa-phone"></i> Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Contact Me</h2>
+        <p>If you have any questions, feel free to reach out to me via email.</p>
+
+        <div class="contact-container">
+            <p><i class="fa fa-envelope"></i> Email: 
+                <a href="mailto:patrickmwnzia136@gmail.com">patrickmwnzia136@gmail.com</a>
+            </p>
+            
+            <p><i class="fa fa-phone"></i> Phone: <span>+254 7XX XXX XXX</span></p>
+            
+            <p><i class="fa fa-map-marker-alt"></i> Location: Nairobi, Kenya</p>
+        </div>
+
+        <!-- Contact Form -->
+        <h3>Send Me a Message</h3>
+        <form action="mailto:patrickmwnzia136@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit"><i class="fa fa-paper-plane"></i> Send</button>
+        </form>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="yooo.html"><i class="fa fa-home"></i> Home</a>
+        <a href="shorts.html"><i class="fa fa-video"></i> Shorts</a>
+        <a href="football.html"><i class="fa fa-futbol"></i> Football</a>
+        <a href="cars.html"><i class="fa fa-car"></i> Cars</a>
+        <a href="music.html"><i class="fa fa-music"></i> Music</a>
+        <a href="contacts.html" class="active"><i class="fa fa-phone"></i> Contact</a>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .contact-container {
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 500px;
+            background: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        .contact-container p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .contact-container a {
+            text-decoration: none;
+            color: blue;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        label {
+            font-weight: bold;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</body>
+</html>
