@@ -122,5 +122,32 @@
         }
         shuffleVideos();
     </script>
+    <script>
+    // Detect orientation changes
+    window.addEventListener("orientationchange", function() {
+        if(window.orientation === 0 || window.orientation === 180){
+            // Portrait mode
+            console.log("Portrait mode");
+            document.body.style.transform = "rotate(0deg)";
+        } else if(window.orientation === 90 || window.orientation === -90){
+            // Landscape mode
+            console.log("Landscape mode");
+            document.body.style.transform = "rotate(0deg)";
+        }
+    });
+
+    // Adjust layout on page load based on current orientation
+    function adjustOrientation() {
+        if(window.innerHeight > window.innerWidth){
+            // Portrait
+            console.log("Portrait detected on load");
+        } else {
+            // Landscape
+            console.log("Landscape detected on load");
+        }
+    }
+
+    window.addEventListener("load", adjustOrientation);
+</script>
 </body>
 </html>
